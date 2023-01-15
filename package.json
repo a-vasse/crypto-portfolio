@@ -7,6 +7,7 @@
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
     "@rails/webpacker": "5.4.3",
+    "axios": "^1.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^5.2.3",
     "prop-types": "^15.8.1",
