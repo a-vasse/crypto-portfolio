@@ -16,7 +16,7 @@ class PortfolioItem extends Component {
 
           <div className="col">
             <div className="header">Current Price:</div>
-            <div className="text">${this.props.item.current_price.toFixed(0)}</div>
+            <div className="text">¥{(+this.props.item.current_price.toFixed(0)).toLocaleString()}</div>
           </div>
 
           <div className="col">
@@ -26,7 +26,7 @@ class PortfolioItem extends Component {
 
           <div className="col">
             <div className="header">Current Value:</div>
-            <div className="text">${this.props.item.value}</div>
+            <div className="text">¥{this.props.item.value.toLocaleString()}</div>
           </div>
         </div>
       </div>
