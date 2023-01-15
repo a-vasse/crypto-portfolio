@@ -8,7 +8,6 @@ import axios from 'axios'
     super(props)
 
     this.state = {
-      name: '',
       portfolio: [],
       search_results: [],
       active_currency: null,
@@ -17,10 +16,12 @@ import axios from 'axios'
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSelect = this.handleSelect.bind(this)
+    this.handleAmount = this.handleAmount.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    axios.post('http://localhost:3000/search', {
+    axios.post('/search', {
       search: event.target.value
     })
 
@@ -35,16 +36,65 @@ import axios from 'axios'
     })
   }
 
-  handleSelect(event) {
+  handleSelect(event){
     event.preventDefault()
-    debugger
+    const id = event.currentTarget.getAttribute('data-id')
+    const activeCurrency = this.state.search_results.filter( item => item.id == parseInt(id))
+    this.setState({
+      active_currency: activeCurrency[0],
+      search_results: []
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+
+    let currency = this.state.active_currency
+    let amount = this.state.amount
+
+    axios.post("/calculate", {
+      id: currency.id,
+      amount: amount
+    })
+
+    .then( (data) => {
+      console.log(data)
+      this.setState({
+        amount: '',
+        active_currency: null,
+        portfolio: [...this.state.portfolio, data.data]
+      })
+    })
+
+    .catch ((data)=>{
+      debugger
+    })
+
+  }
+
+  handleAmount(event){
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
 
   render() {
+    const contentSelector = this.state.active_currency ?
+    <Calculate
+      handleAmount={this.handleAmount}
+      handleSubmit={this.handleSubmit}
+      active_currency={this.state.active_currency}
+      amount={this.state.amount}
+    /> :
+    <Search
+      handleSelect={this.handleSelect}
+      searchResults={this.state.search_results}
+      handleChange={this.handleChange}
+    />
+
     return(
       <div>
-        <Search searchResults={this.state.search_results} handleSelect={this.handleSelect} handleChange={this.handleChange} />
-        <Calculate />
+        {contentSelector}
       </div>
     )
   }
