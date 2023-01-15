@@ -16,7 +16,7 @@ class PortfolioItem extends Component {
 
           <div className="col">
             <div className="header">Current Price:</div>
-            <div className="text">${this.props.item.current_price}</div>
+            <div className="text">${this.props.item.current_price.toFixed(0)}</div>
           </div>
 
           <div className="col">

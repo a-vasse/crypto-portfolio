@@ -13,8 +13,8 @@ class Portfolio extends Component {
     return (
       <div>
         <div className="portfolio-value">
-          <div className="portfolio-value-header">Your Total Portfolio Value Is: $</div>
-          <div className="portfolio-value-content">{total}</div>
+          <div className="portfolio-value-header">Your Total Portfolio Value Is:</div>
+          <div className="portfolio-value-content">¥{total}</div>
         </div>
         <div className="portfolio-items">
           {portfolioItems}
