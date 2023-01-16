@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'currencies#index'
+  
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
 
   post 'search', to: 'currencies#search'
   post 'calculate', to: 'currencies#calculate'

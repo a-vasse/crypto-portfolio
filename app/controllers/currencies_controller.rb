@@ -1,9 +1,6 @@
 class CurrenciesController < ApplicationController
   # skip_before_action :authenticate_user!
 
-  def index
-  end
-
   def search
     @currencies = Currency.where('LOWER(name) LIKE ?', "%#{params[:search].downcase}%")
     render json: { currencies: @currencies }
