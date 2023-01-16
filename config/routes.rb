@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   post 'search', to: 'currencies#search'
   post 'calculate', to: 'currencies#calculate'
-  get '/users/:id', to: 'currencies#index', as: 'currencies'
 
-  resources :users do
-    resources :currencies
-  end
+  resources :users
+
+  resources :currencies
 end
