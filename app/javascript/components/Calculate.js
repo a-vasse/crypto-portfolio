@@ -8,15 +8,11 @@ class Calculate extends Component {
   render() {
     return (
       <div>
-        <h1>How much {this.props.active_currency.name} do you own?</h1>
+        <h3 className="title">How much {this.props.active_currency.name} do you own?</h3>
+        <label>Enter amount owned:</label><br/>
         <form onSubmit={this.props.handleSubmit}>
-          <div className="form-group">
-            <label>Enter amount owned:</label><br/>
-            <input onChange={this.props.handleAmount} autoComplete="off" type="text" name="amount" placeholder="How much do you own?" value={this.props.amount} className="field"/>
-          </div>
-          <div className="form-group">
+            <input onChange={this.props.handleAmount} autoComplete="off" type="text" name="amount" placeholder='Ex. "6"' value={this.props.amount} className="calculate"/>
             <input type="submit" className="calculate-button" value="Calculate Total" />
-          </div>
         </form>
       </div>
     );

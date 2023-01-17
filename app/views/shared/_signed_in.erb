@@ -1,0 +1,6 @@
+<li class="user-name">
+  <p>Welcome, <%= current_user.name %>!</p>
+</li>
+<li class="logout-button">
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"crypto-text" %>
+</li>

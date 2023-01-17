@@ -13,8 +13,8 @@ class Portfolio extends Component {
     return (
       <div>
         <div className="portfolio-value">
-          <div className="portfolio-value-header">Your Total Portfolio Value Is:</div>
-          <div className="portfolio-value-content">¥{total.toLocaleString()}</div>
+          <h3 className="portfolio-header">Total Portfolio Value:</h3>
+          <h3 className="portfolio-header">¥{total.toLocaleString()}</h3>
         </div>
         <div className="portfolio-items">
           {portfolioItems}

@@ -94,9 +94,13 @@ import axios from 'axios'
     />
 
     return(
-      <div>
-        {contentSelector}
-        <Portfolio portfolio={this.state.portfolio}/>
+      <div className="portfolio-container">
+        <div className="portfolio-left">
+          {contentSelector}
+        </div>
+        <div className="portfolio-right">
+          <Portfolio portfolio={this.state.portfolio}/>
+        </div>
       </div>
     )
   }

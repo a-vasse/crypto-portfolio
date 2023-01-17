@@ -1317,3 +1317,9 @@ currencies = Currency.create([
   { name: 'PokeCoin', max_supply: 0, currency_symbol: 'POKE', slug: 'pokecoin' },
   { name: 'GameLeagueCoin', max_supply: 0, currency_symbol: 'GML', slug: 'gameleaguecoin' }
 ])
+
+User.create(
+  name: "Alex",
+  email: "alex@test.com",
+  password: "test123"
+)
