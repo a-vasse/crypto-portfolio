@@ -1,4 +1,5 @@
 currency = []
+
 url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=200&aux=cmc_rank,max_supply,total_supply&convert=JPY"
 request = HTTParty.get(url, headers: { "X-CMC_PRO_API_KEY" => Rails.application.credentials[:coinAPI] })
 response = JSON.parse(request.body)
