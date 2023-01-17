@@ -8,23 +8,23 @@ class PortfolioItem extends Component {
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col">
+        <div className="portfolio-card">
+          <div className="portfolio-card-object">
             <div className="header">Currency:</div>
             <div className="text">{this.props.item.currency.name}</div>
           </div>
 
-          <div className="col">
+          <div className="portfolio-card-object">
             <div className="header">Current Price:</div>
             <div className="text">¥{(+this.props.item.current_price.toFixed(0)).toLocaleString()}</div>
           </div>
 
-          <div className="col">
-            <div className="header">Amount In Your Portfolio:</div>
+          <div className="portfolio-card-object">
+            <div className="header">Quantity:</div>
             <div className="text">{this.props.item.amount}</div>
           </div>
 
-          <div className="col">
+          <div className="portfolio-card-object">
             <div className="header">Current Value:</div>
             <div className="text">¥{this.props.item.value.toLocaleString()}</div>
           </div>

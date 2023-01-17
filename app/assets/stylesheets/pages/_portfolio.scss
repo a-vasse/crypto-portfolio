@@ -9,56 +9,27 @@
   margin-bottom: 24px;
 }
 
-
-
-.grid{
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 1fr;
-  height: 100vh;
-}
-
-.left {
-  background:#f6f9fc;
-  padding:10px;
-}
-
-.right {
-  background: #001628;
-}
-
-.right h1{
-  text-align:center;
-}
-
-.profileImg{
-  width:20px;
-  border-radius:100%;
-  margin-right:20px;
-}
-
-.portfolio-wrapper{
-  padding:20px;
-}
-
-.row{
+.portfolio-card {
   display: flex;
   flex-direction: row;
-  background: white;
+  justify-content: space-evenly;
+  color: white;
+  background-color: #7a00df;
+  border: 0.1rem solid #560079;
   box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
   padding: 20px 10px;
   border-radius:8px;
   margin: 10px 10px 10px 10px;
 }
 
-.col{
-  flex-grow:1;
+.portfolio-card-object{
+  width: 25%
 }
 
-.col .header{
+.portfolio-card-object .header{
   font-size:10px;
 }
 
-.col .text {
+.portfolio-card-object .text {
   font-size:18px;
 }
